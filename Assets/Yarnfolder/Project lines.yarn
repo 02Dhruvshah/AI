@@ -16,14 +16,23 @@ Is this your First Rave? #line:08c6810
 -> Yes, It's my first time coming to a Rave. #line:0bbe51f
     <<set $usedBefore=true>>
     <<jump Yesfirstrave>>
+
+
 -> No, I'm a Rave Machine!! #line:090a904 
     <<set $usedBefore=false>>
     <<jump notfirstrave>>
+
 ===
 title:Yesfirstrave
 tags:
 ---
-Thats great, hope you have a time of your life #line:04836ec 
+Thats great, hope you have a time of your life, One question first, #line:04836ec 
+Do you like MonoLink? #line:04421ee 
+    ->Yes #line:07ddd33 
+        <<jump notfirstrave>>
+    ->No, I live Under a Rock #line:04aa6bb
+        <<jump KYS>>  
+
 ===
 
 title:notfirstrave
@@ -34,13 +43,36 @@ Damn you are a wild animal #line:0f3f239
 
 Where did you attend your last rave? #line:0c5e78b 
 
-    -> My last Rave was Monolink when he was in town. #line:0971845 
-    <<Material_Selector YarnVommander>>
-    <<set $colourToSet="Gold">>
-    <<set $Sass=false>>
+    -> My last Rave was Monolink when he was in town. #line:0971845
+        <<jump goodending>>
     -> In the Real world duh!, I'm not a looser like these chumps. #line:0ba03c3 
-    <<set $colourToSet="Magenta">>
-    <<set $Sass=true>>
-    <<Material_Selector YarnVommander>>
+        <<jump goodending>>
+===
+title:KYS
+tags:
+---
+What are you doing with your life, go and listen to IT!!! #line:0fe9a15 
+<<jump Happy>>
+===
 
+title:Happy
+tags:
+---
+did you listen to it ? #line:03229fc 
+    ->Yes #line:001be6e 
+        <<jump goodending>>
+    ->No #line:0ed997f 
+        <<jump badending>>
+
+===
+title: goodending
+tags:
+---
+Congratulations, now your life is changed,I would Reccomend you Move around the area and mingle a bit with other People here. #line:03db780 
+===
+
+title:badending
+tags:
+---
+Dude Just press lt + F4 #line:0f51d36 
 ===
