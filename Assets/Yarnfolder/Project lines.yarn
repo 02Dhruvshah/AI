@@ -3,3 +3,44 @@ tags:
 ---
 
 ===
+title:startbody
+tag:
+---
+<<declare $usedBefore=false>>
+<<declare $colourToSet="blue">>
+<<declare $Sass=false>>
+Welcome to the Party!! #line:031d8d5 
+
+Is this your First Rave? #line:08c6810 
+
+-> Yes, It's my first time coming to a Rave. #line:0bbe51f
+    <<set $usedBefore=true>>
+    <<jump Yesfirstrave>>
+-> No, I'm a Rave Machine!! #line:090a904 
+    <<set $usedBefore=false>>
+    <<jump notfirstrave>>
+===
+title:Yesfirstrave
+tags:
+---
+Thats great, hope you have a time of your life #line:04836ec 
+===
+
+title:notfirstrave
+tags:
+---
+
+Damn you are a wild animal #line:0f3f239 
+
+Where did you attend your last rave? #line:0c5e78b 
+
+    -> My last Rave was Monolink when he was in town. #line:0971845 
+    <<Material_Selector YarnVommander>>
+    <<set $colourToSet="Gold">>
+    <<set $Sass=false>>
+    -> In the Real world duh!, I'm not a looser like these chumps. #line:0ba03c3 
+    <<set $colourToSet="Magenta">>
+    <<set $Sass=true>>
+    <<Material_Selector YarnVommander>>
+
+===
